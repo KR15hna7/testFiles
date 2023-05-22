@@ -1,7 +1,7 @@
 #!/bin/bash
 
-agent install
------------------------------------------------------
+#Create admin user and setup agent
+#-------------------------------------------------
 # Create a new user
 sudo adduser --disabled-password --gecos "" svc_devops_deploy
 
@@ -35,8 +35,8 @@ sudo tar zxvf vsts-agent-linux-x64-3.220.2.tar.gz
 
 
 
-install pre-requisities
-----------------------------------------------------------
+#install pre-requisities
+#----------------------------------------------------------
 # Update package lists
 sudo apt update
 
@@ -63,8 +63,8 @@ sudo ufw allow 'Nginx Full'
 sudo service nginx start
 
 
-application install - separate pipeline
----------------------------------------------------------
+#application install - separate pipeline
+#---------------------------------------------------------
 
 # Update DNS settings
 echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf
