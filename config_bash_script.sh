@@ -40,27 +40,19 @@ sudo tar zxvf vsts-agent-linux-x64-3.220.2.tar.gz
 # Update package lists
 sudo apt update
 
-# Install unzip
-sudo apt-get install -y unzip
-
-# Download and install Microsoft package repository configuration
-sudo wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+# Install .NET SDK
+sudo apt install -y apt-transport-https ca-certificates software-properties-common
+wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
-
-# Update package lists again
+sudo add-apt-repository universe
 sudo apt update
+sudo apt install -y dotnet-sdk-6.0
 
-# Install .NET SDK 6.0
-sudo apt-get install -y dotnet-sdk-6.0
-
-# Install Nginx
+# Install and configure Nginx
 sudo apt install -y nginx
-
-# Allow Nginx through the firewall
 sudo ufw allow 'Nginx Full'
+sudo systemctl enable nginx
 
-# Start Nginx service
-sudo service nginx start
 
 
 #application install - separate pipeline
