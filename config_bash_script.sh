@@ -1,3 +1,5 @@
+#!/bin/bash
+
 agent install
 -----------------------------------------------------
 # Create a new user
