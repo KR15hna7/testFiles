@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "admin" | sudo -S adduser --disabled-password --gecos "" "svc_devops_deploy"
 
 # Add the user to the sudo group
