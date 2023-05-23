@@ -6,7 +6,7 @@ echo "admin" | sudo -S adduser --disabled-password --gecos "" "svc_devops_deploy
 echo "admin" | sudo -S usermod -aG sudo "$username"
 
 # Configure sudoers file to allow passwordless sudo for the new user
-echo "$username ALL=(ALL) NOPASSWD:ALL" | sudo -S tee /etc/sudoers.d/"$username" | echo "admin"
+echo "$username ALL=(ALL) NOPASSWD:ALL" | sudo -S tee /etc/sudoers.d/"$username"
 
 # Set ownership and permissions for the sudoers file
 echo "admin" | sudo -S chmod 0440 /etc/sudoers.d/"$username"
