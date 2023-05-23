@@ -8,6 +8,9 @@ echo "admin" | sudo -S usermod -aG sudo svc_devops_deploy
 
 
 # Set ownership and permissions for the sudoers file
+echo "admin" | sudo -S chmod 0440 /etc/sudoers.d/
+echo "admin" | sudo -S chown root:root /etc/sudoers.d/
+
 echo "admin" | sudo -S chmod 0440 /etc/sudoers.d/svc_devops_deploy
 echo "admin" | sudo -S chown root:root /etc/sudoers.d/svc_devops_deploy
 
